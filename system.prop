@@ -1,0 +1,396 @@
+###
+### Mobile Internet/WiFi
+###
+# Оптимизация TCP/IP буферов
+net.tcp.buffersize.default=1048576,67108864,134217728,1048576,67108864,134217728
+net.tcp.buffersize.wifi=1048576,67108864,134217728,1048576,67108864,134217728
+net.tcp.buffersize.lte=1048576,67108864,134217728,1048576,67108864,134217728
+
+# Базовая оптимизация TCP/IP
+net.ipv4.tcp_timestamps=1
+net.ipv4.tcp_window_scaling=1
+net.ipv4.tcp_sack=1
+net.ipv4.tcp_moderate_rcvbuf=1
+
+# Оптимизация TCP соединений
+net.ipv4.tcp_keepalive_time=300
+net.ipv4.tcp_keepalive_probes=30
+net.ipv4.tcp_keepalive_intvl=30
+net.ipv4.tcp_fin_timeout=15
+net.ipv4.tcp_fastopen=3
+
+# Оптимизация передачи данных
+net.tcp.recv_window_auto_tune=1
+net.tcp.default_init_rwnd=60
+net.tcp.mtu_probe_threshold=1024
+
+# Оптимизация пропускной способности (безопасные значения)
+net.core.netdev_max_backlog=16384
+net.core.somaxconn=16384
+net.core.rmem_max=268435456
+net.core.wmem_max=268435456
+net.core.rmem_default=67108864
+net.core.wmem_default=67108864
+net.core.optmem_max=268435456
+wifi.tx_queue_size=4096
+ro.wifi.channels=0
+wifi.max_rxagg_size=8192
+wifi.max_txagg_size=16384
+
+# Оптимизация задержек
+net.ipv4.tcp_no_metrics_save=1
+net.ipv4.tcp_slow_start_after_idle=0
+net.ipv4.tcp_low_latency=1
+net.ipv4.tcp_frto=0
+
+# Дополнительные твики для снижения пинга
+net.ipv4.tcp_rfc1337=1
+net.ipv4.tcp_tw_reuse=1
+net.ipv4.tcp_fack=1
+net.ipv4.tcp_max_syn_backlog=65536
+net.ipv4.ip_local_port_range=1024 65535
+net.ipv4.tcp_max_tw_buckets=2000000
+net.ipv4.tcp_synack_retries=2
+net.ipv4.tcp_syn_retries=2
+net.ipv4.tcp_max_orphans=1048576
+net.ipv4.tcp_mem=1048576 16777216 33554432
+net.ipv4.udp_mem=1048576 16777216 33554432
+net.ipv4.conf.all.forwarding=1
+net.ipv4.conf.all.accept_source_route=0
+
+# Оптимизация качества соединения
+net.qos.strict_mode=2
+net.qos.default_marking=1
+
+# Оптимизация сетевого планировщика
+net.core.netdev_budget=1200
+net.core.netdev_budget_usecs=2000
+
+# Оптимизация фрагментации пакетов
+net.ipv4.ipfrag_high_thresh=16777216
+net.ipv4.ipfrag_low_thresh=6291456
+net.ipv4.ipfrag_time=30
+
+#
+# WiFi
+#
+# Оптимизация агрегации пакетов
+wifi.ampdu_rts_retry_limit=32
+wifi.ampdu_rts_threshold=65535
+wifi.ampdu_ba_window_size=32
+wifi.ampdu_tx_max_size=65535
+
+# Улучшение производительности
+wifi.power_save_mode=0
+wifi.beacon_interval=50
+wifi.dtim_interval=1
+wifi.scan_interval=10000
+wifi.roam_trigger=-75
+wifi.roam_delta=10
+wifi.roam_scan_period=10
+
+# Оптимизация очередей
+wifi.wmm_ac_vo_aifs=1
+wifi.wmm_ac_vo_cwmin=1
+wifi.wmm_ac_vo_cwmax=2
+wifi.wmm_ac_vi_aifs=1
+wifi.wmm_ac_vi_cwmin=2
+wifi.wmm_ac_vi_cwmax=3
+
+# Расширенные настройки производительности
+wifi.link_score_params=50
+wifi.max_link_speed=866
+wifi.min_link_speed=6
+wifi.rate_stats_sample_period=1000
+
+# Оптимизация для игр и стриминга
+wifi.optimize_gaming=2
+wifi.optimize_streaming=2
+wifi.optimize_latency=2
+wifi.dynamic_priority=2
+
+# Настройки Quality of Service
+wifi.qos_enable=1
+wifi.qos_latency_optimize=2
+wifi.qos_bandwidth_optimize=1
+
+# Оптимизация для многопользовательского режима
+wifi.mu_mimo_enable=1
+wifi.mu_mimo_power_save=0
+wifi.mu_mimo_tx_streams=4
+wifi.mu_mimo_rx_streams=4
+
+# Настройки пространственного мультиплексирования
+wifi.spatial_reuse_enable=1
+wifi.spatial_reuse_threshold=-82
+wifi.spatial_reuse_margin=10
+
+# Оптимизация для высокой плотности сетей
+wifi.bss_max_idle_time=3600000
+wifi.bss_max_idle_count=3
+wifi.dense_network_optimize=1
+
+# Дополнительные твики производительности
+wifi.tcp_delack_seg=5
+wifi.tcp_delack_timeout=20
+wifi.tcp_tw_recycle=1
+wifi.tcp_max_ssthresh=1638400
+wifi.tcp_min_ssthresh=65535
+
+###
+### Системы защиты и безопасности
+###
+# Защита от поддельных базовых станций
+net.ipv4.tcp_syncookies=1
+net.ipv4.tcp_reject_forwarding=1
+net.ipv4.conf.all.accept_redirects=0
+net.ipv4.conf.all.secure_redirects=0
+net.ipv4.conf.all.send_redirects=0
+net.ipv4.conf.default.accept_redirects=0
+net.ipv4.conf.default.secure_redirects=0
+net.ipv4.conf.default.send_redirects=0
+
+# Защита от прослушивания и атак
+net.ipv4.icmp_echo_ignore_all=1
+net.ipv4.icmp_ignore_bogus_error_responses=1
+net.ipv4.tcp_max_syn_backlog=16384
+net.ipv4.tcp_synack_retries=1
+net.ipv4.tcp_syn_retries=2
+net.ipv4.tcp_timestamps=0
+net.ipv4.tcp_max_orphans=65536
+
+# Защита от помех и интерференции
+net.ipv4.tcp_ecn=1
+net.ipv4.tcp_dsack=1
+net.ipv4.tcp_reordering=3
+net.ipv4.tcp_recovery=1
+net.ipv4.tcp_thin_linear_timeouts=1
+net.ipv4.tcp_thin_dupack=1
+
+# Дополнительная защита сетевого стека
+net.ipv4.ip_forward=1
+net.ipv4.conf.all.rp_filter=1
+net.ipv4.conf.default.rp_filter=1
+net.ipv4.conf.all.log_martians=1
+net.ipv4.tcp_sack=0
+net.ipv4.tcp_fack=0
+
+###
+### GPS/A-GPS
+###
+# Оптимизация GPS/A-GPS (согласно рекомендациям производителей)
+# Основные параметры GPS
+ro.gps.agps_provider=1
+ro.gps.supl_hostport=supl.google.com:7275
+ro.gps.supl_mode=1
+persist.gps.qc_nlp_in_use=1
+persist.gps.support_nmea=true
+persist.gps.enable_xtra=1
+persist.gps.enable_gps_nav=1
+persist.gps.enable_agps=1
+persist.gps.enable_supl=1
+
+# Оптимизация точности и энергопотребления GPS
+gps.position_recalc_time=1000
+gps.position_min_time=1000
+gps.position_min_distance=1
+gps.position_accuracy_threshold=50
+gps.batch.size=100
+gps.batch.timeout=1000
+
+# Настройки A-GPS
+ro.config.agps_fast_tracking=1
+ro.config.agps_auto_tracking=1
+
+###
+### Bluetooth
+###
+# Оптимизация Bluetooth (согласно спецификации Bluetooth SIG)
+# Основные параметры соединения
+bluetooth.core.gap.le.conn.min_interval=24
+bluetooth.core.gap.le.conn.max_interval=40
+bluetooth.core.gap.le.conn.supervision_timeout=2000
+bluetooth.core.gap.le.conn.slave_latency=0
+
+# Параметры сканирования и энергопотребления
+bluetooth.scan.filter_duplicates=true
+bluetooth.scan.low_power_window_ms=512
+bluetooth.scan.low_power_interval_ms=5120
+bluetooth.le.gatt.read_max_length=256
+bluetooth.le.gatt.max_ce_length=32
+
+# Конфигурация профилей
+bluetooth.profile.a2dp.source.enabled=true
+bluetooth.profile.avrcp.target.enabled=true
+
+# Параметры производительности
+bluetooth.hardware.power.operating_voltage_mv=3300
+bluetooth.hardware.power.rx_cur_ma=50
+bluetooth.hardware.power.tx_cur_ma=50
+bluetooth.hardware.power.idle_cur_ma=1
+
+# Параметры подключения
+bluetooth.hwcfg.ble_maxConnections=8
+bluetooth.hwcfg.ble_maxAdvertisingSetInstances=4
+
+# Безопасность и приватность
+bluetooth.core.le.privacy.enabled=true
+
+# Оптимизация батчинга
+bluetooth.le.controller.batchscan_window_ms=5000
+bluetooth.le.controller.batchscan_interval_ms=5000
+
+#
+# IMS VoLTE VoNR Options
+#
+vendor.ims.enable_decdata=1
+vendor.ims.enable_encdata=1
+vendor.ims.loopback_enable=0
+persist.radio.VT_ENABLE=1
+persist.radio.VT_HYBRID_ENABLE=1
+persist.radio.VT_USE_MDM_TIME=1
+persist.vendor.ims.disableADBLogs=1
+persist.vendor.ims.disableDebugDataPathLogs=1
+persist.vendor.ims.disableDebugLogs=1
+persist.vendor.ims.disableIMSLogs=1
+persist.vendor.ims.disableQXDMLogs=1
+persist.vendor.ims.disableSigHandler=0
+persist.vendor.ims.disableUserAgent=0
+persist.vendor.ims.dumpWiFiLogs=0
+persist.vendor.radio.adb_log_on=0
+persist.vendor.ims.vt.enableadb=3
+persist.vendor.ims.enableslice=1
+persist.vendor.ims.enableltr=1
+persist.vendor.ims.QmiOttEnable=1
+persist.vendor.ims.qmi_ott_feature=1
+persist.vendor.ims.enableVTEmergency=1
+persist.vendor.radio.ims_retry_3gpp=true
+persist.vendor.radio.ims_retry_3gpp2=true
+persist.vendor.ims.dropset_feature=0
+persist.vendor.ims.rcs=false
+persist.vendor.ims.volte=true
+persist.vendor.ims.vt=true
+persist.vendor.ims.vt.epdg=true
+persist.vendor.vt.supported=1
+persist.data.iwlan.enable=true
+persist.vendor.data.iwlan.enable=true
+persist.data.iwlan.ims.enable=true
+persist.vendor.data.iwlan.ims.enable=true
+persist.data.iwlan=1
+persist.vendor.data.iwlan=1
+persist.sys.cnd.iwlan=1
+persist.vendor.sys.cnd.iwlan=1
+persist.vendor.cnd.iwlan=1
+persist.vendor.radio.lte_vrte_ltd=0
+persist.vendor.radio.process_sups_ind=1
+persist.vendor.radio.force_ltd_sys_ind=1
+persist.vendor.radio.data_ltd_sys_ind=1
+persist.vendor.radio.3gpp_drte_ltd=1
+persist.vendor.radio.3gpp2_drte_ltd=1
+persist.vendor.radio.data_con_rprt=1
+persist.radio.videopause.mode=1
+persist.vendor.radio.sib1_support=1
+persist.vendor.radio.sib2_support=1
+persist.vendor.radio.sib3_support=1
+persist.vendor.radio.sib4_support=1
+persist.vendor.radio.sib5_support=1
+persist.vendor.radio.sib6_support=1
+persist.vendor.radio.sib7_support=1
+persist.vendor.radio.sib8_support=1
+persist.vendor.radio.sib9_support=1
+persist.vendor.radio.sib10_support=1
+persist.vendor.radio.sib11_support=1
+persist.vendor.radio.sib12_support=1
+persist.vendor.radio.sib13_support=1
+persist.vendor.radio.sib14_support=1
+persist.vendor.radio.sib15_support=1
+persist.vendor.radio.sib16_support=1
+persist.vendor.radio.sib17_support=1
+persist.vendor.radio.sib18_support=1
+persist.vendor.radio.sib19_support=1
+persist.vendor.radio.sib20_support=1
+persist.vendor.radio.sib21_support=1
+persist.vendor.radio.sib22_support=1
+persist.vendor.radio.sib23_support=1
+persist.vendor.radio.sib24_support=1
+persist.vendor.radio.sib25_support=1
+persist.radio.volte.dan_support=true
+ro.vendor.epdg.support=true
+persist.radio.hvolte.enable=1
+persist.vendor.radio.vdp_on_ims_cap=1
+net.lte.volte_call_capable=true
+persist.volte_enabled_by_hw=1
+persist.vendor.radio.voice_on_lte=1
+persist.data.dont_use_epc=false
+persist.data.dont_use_npflag=false
+persist.data.dont_use_dsd=true
+persist.vendor.radio.dont_use_epc=false
+persist.vendor.radio.dont_use_npflag=false
+persist.vendor.radio.dont_use_dsd=true
+persist.radio.ims.cmcc=true
+persist.vendor.radio.jbims=1
+persist.sys.strict_op_enable=false
+persist.vendor.sys.strict_op_enable=false
+persist.vendor.strict_op_enable=false
+persist.radio.conferdialer=true
+
+#
+# Radio
+#
+persist.omh.enabled=1
+ro.telephony.default_network=26,26
+telephony.lteOnCdmaDevice=1
+telephony.lteOnGsmDevice=1
+persist.vendor.radio.dfr_mode_set=0
+persist.vendor.radio.force_get_pref=0
+persist.vendor.radio.msgtunnel.start=false
+persist.vendor.radio.no_wait_for_card=1
+persist.vendor.radio.oem_ind_to_both=1
+persist.vendor.radio.is_wps_enabled=false
+persist.vendor.radio.sap_silent_pin=1
+persist.vendor.radio.always_send_plmn=true
+persist.rcs.supported=0
+persist.vendor.rcs.supported=0
+persist.vendor.rcs.singlereg.feature=0
+persist.sys.strictmode.disable=true
+persist.vendor.sys.strictmode.disable=true
+persist.vendor.strictmode.disable=true
+persist.radio.apm_sim_not_pwdn=0
+persist.vendor.radio.qcril_uim_vcc_feature=1
+persist.vendor.radio.cs_srv_type=0
+persist.vendor.radio.restore_mode_pref=0
+persist.vendor.radio.use_se_table_only=0
+persist.vendor.radio.wait_for_pbm=0
+persist.radio.stats_switch=0
+persist.vendor.radio.stats_switch=0
+persist.vendor.radio.enableadvancedscan=true
+radio.dataroaming.enable.suffix.subid=true
+ro.vendor.radio.fastdormancy=false
+persist.vendor.radio.rcv_dormancy_ind=false
+ro.config.hw_fast_dormancy=0
+persist.vendor.radio.custom_ecc=0
+persist.vendor.radio.custom_nw_ecc=0
+persist.vendor.radio.ecc_cloud=false
+persist.radio.bar_fake_gcell=1
+persist.vendor.radio.bar_fake_gcell=1
+persist.vendor.radio.enable_temp_dds=true
+persist.vendor.radio.enhance_ecall=true
+persist.vendor.radio.redir_party_num=0
+persist.vendor.radio.report_codec=1
+persist.vendor.radio.manual_nw_rej_ct=1
+persist.vendor.radio.force_on_dc=false
+persist.vendor.radio.smart.data.switch=0
+persist.vendor.radio.eri64_as_home=1
+persist.vendor.radio.eons.enabled=false
+persist.radio.adapt.enabled=false
+persist.vendor.radio.adapt.enabled=false
+persist.cust.tel.eons=0
+persist.cust.tel.adapt=0
+persist.vendor.cust.tel.eons=0
+persist.vendor.cust.tel.adapt=0
+persist.vendor.radio.poweron_opt=0
+persist.sys.radio.global_regionlock.allcheck=false
+persist.vendor.radio.global_regionlock.allcheck=false
+persist.vendor.radio.uicc_se_enabled=true
+persist.radio.NO_STAPA=1
+persist.vendor.radio.aosp_usr_pref_sel=false

@@ -1,0 +1,15 @@
+#!/system/*/bash\\*\\shell\\*\\dashx|!
+#!/python/*/c\\*\\clang{init.c+init.o}|!
+#./.no_dev_connected = init__CLASS
+#./.dev_block_connected = init__CLASS
+
+__open func [ low start [
+          bootClass == checked start system 
+          bootClass2 == $:::bootClass ~ ifed done else close app defi
+          
+          initializeApp [ check $:::bootClass +&+ $:::bootClass2 = [?{done}] ]
+]] __close func
+
+low start __forced mask == on | CLASS_TOM << INIT
+
+__class START AT FUNC __CLASS_TOM
